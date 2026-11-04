@@ -2,7 +2,7 @@ package domain.repository;
 
 public interface IRepositorio<T, ID> {
     long count();
-    void deletedById(ID id);
+    void deleteById(ID id);
     void deleteAll();
     boolean existsById(ID id);
     T findById(ID id);
