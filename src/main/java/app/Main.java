@@ -1,6 +1,6 @@
 package app;
 
-import Infrastructure.database.DatabaseConnection;
+import infrastructure.database.DatabaseConnection;
 
 import java.sql.Connection;
 import java.sql.SQLException;
