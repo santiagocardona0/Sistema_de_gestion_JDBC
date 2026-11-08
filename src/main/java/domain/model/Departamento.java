@@ -24,4 +24,8 @@ public class Departamento {
         return empresaId;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
 }

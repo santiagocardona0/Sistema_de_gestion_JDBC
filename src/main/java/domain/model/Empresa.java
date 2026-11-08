@@ -23,4 +23,12 @@ public class Empresa {
     public String getCif() {
         return cif;
     }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 }

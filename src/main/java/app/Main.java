@@ -1,20 +1,32 @@
 package app;
 
+import domain.model.*;
 import infrastructure.database.DatabaseConnection;
-
-import java.sql.Connection;
-import java.sql.SQLException;
+import infrastructure.repository.*;
 
 public class Main {
-    public static void main(String[] args) {
-        System.out.println("Aplicación JDBC iniciada");
 
-        //Comprobar la conexion de la base de datos
-        try(Connection connection = DatabaseConnection.getConnection() ) {
-            System.out.println("Conexion a postgre correctamente");
-        } catch (SQLException e) {
-            System.out.println("Error al conectar con la base de datos");
-            e.printStackTrace();
+    public static void main(String[] args) {
+
+        try {
+            EmpresaRepositoryJDBC empresaRepo =
+                    new EmpresaRepositoryJDBC();
+
+            DepartamentoRepositoryJDBC departamentoRepo =
+                    new DepartamentoRepositoryJDBC();
+
+            EmpleadoRepositoryJDBC empleadoRepo =
+                    new EmpleadoRepositoryJDBC();
+
+            System.out.println("Conexión a la base de datos correcta.");
+
+            System.out.println("Empresas: " + empresaRepo.count());
+            System.out.println("Departamentos: " + departamentoRepo.count());
+            System.out.println("Empleados: " + empleadoRepo.count());
+
+        } catch (Exception e) {
+            System.err.println("Error al ejecutar la aplicación: "
+                    + e.getMessage());
         }
     }
 }

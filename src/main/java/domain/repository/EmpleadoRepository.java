@@ -9,5 +9,5 @@ public interface EmpleadoRepository
         extends IRepositorioExtend<Empleado, Long> {
 
     Optional<Empleado> findByEmail(String email);
-    List<Empleado> findByDepartamentoiD(Long departamentoId);
+    List<Empleado> findByDepartamentoId(Long departamentoId);
 }

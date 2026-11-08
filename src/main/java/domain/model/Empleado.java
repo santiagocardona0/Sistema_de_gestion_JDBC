@@ -10,6 +10,7 @@ public class Empleado {
         this.id = id;
         this.nombre = nombre;
         this.email = email;
+        this.departamentoId = departamentoId;
     }
 
     public Long getId() {
@@ -26,5 +27,9 @@ public class Empleado {
 
     public Long getDepartamentoId() {
         return departamentoId;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }
